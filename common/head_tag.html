@@ -3,3 +3,25 @@
 <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css' data-noprefix>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/discourse-plugin" version="0.1">
+  api.onPageChange((url) => {
+    const cookieBanner = document.querySelector('.cookie-banner');
+    const cookieBannerOk = document.querySelector('.cookie-banner__btn--ok');
+    const setReadCookiePolicy = () => {
+      document.cookie = `_inv_read_cookie_policy_at=${(new Date).getTime()}; Domain=inventables.com`;
+    };
+    const didReadCookiePolicy = () => {
+      return document.cookie.split(';').some(crumb => crumb.trim().startsWith('_inv_read_cookie_policy_at='));
+    };
+    cookieBannerOk.addEventListener('click', () => {
+      cookieBanner.style.display = 'none';
+    });
+    if (!didReadCookiePolicy()) {
+      setReadCookiePolicy();
+      cookieBanner.style.display = 'block';
+    }
+    else {
+      cookieBanner.style.display = 'none';
+    }
+  });
+</script>
