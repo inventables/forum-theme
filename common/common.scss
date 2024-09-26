@@ -414,3 +414,7 @@ header.d-header {
 .cookie-banner__btn--ok:hover {
   cursor: pointer;
 }
+
+.categories-list .category .category-description {
+  overflow: auto;
+}
