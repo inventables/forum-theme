@@ -4,360 +4,44 @@
     margin-left: auto;
     padding: 0 8px;
 }
+
 html, body {
-  font-family: "Alright Sans LT","Helvetica Neue",Helvetica,sans-serif;
+  font-family: "Lato", helvetica, sans-serif;
 }
 
-#site-text-logo {
-  font-size: 2em;
-  font-weight: 500;
-  color: #333;
-  line-height: normal;
+nav.navbar {
+  background-color: #034278;
+  color: white;
+  padding: 1rem 0;
 }
 
-header.d-header {
-  box-shadow: none !important;
-  padding-top: 10px;
+.navbar-brand {
+  img {
+    height: 1em;
+  }
 }
 
-.header {
-  display: none;
+ul.navbar-nav {
+  li.nav-item  {
+    > a {
+      color: white;
 
-  padding: 20px 0;
-  border-bottom: 1px solid #cecece;
-  font-size: 14px;
-
-  .open > .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown li, .dropdown-menu li {
-    text-transform: none;
-  }
-
-  .dropdown-menu > li > a {
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: 20px;
-    color: #333333;
-    white-space: nowrap;
-  }
-
-  #main-nav-bar {
-    .header__nav {
-      margin-top: 0px;
+      &:not(.btn):hover {
+        color: white;
+        opacity: 0.8;
+        transform: translate(0, 1px);
+      }
     }
   }
-
-  .dropdown-menu {
-    position: absolute;
-    margin-top: 5px;
-    left: -20px;
-    top: 100%;
-    display: none;
-    float: left;
-    min-width: 160px;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    list-style: none;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,0.2);
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-
-    z-index: 10000;
-    width: inherit;
-    bottom: inherit;
-  }
 }
 
-.header__nav .search {
-  display: none;
+// Bootstrap .row class overrides the built in discourse .row class, so we need to override it again
+#main-outlet-wrapper .row {
+  display: block !important;
 }
 
-.header__nav #cart-menu-item {
-  border-right-style: none;
-  margin-right: 0;
-  padding-right: 0;
-}
-
-.ember-view.login-button[title='Log In'] {
-    display: none;
-}
-
-.nav-icon {
-  width: 22px;
-  height: 22px;
-  transition: opacity .3s ease;
-}
-
-.nav-icon:hover {
-  opacity:.7;
-}
-
-.alert-s3-deprecation {
-    display: none;
-}
-
-.header__container {
-  width: 100%;
-  margin: auto;
-  padding: 0 15px;
-  box-sizing: border-box;
-
-}
-.header__container:after {
-  clear: both;
-  display: table;
-  line-height: 0;
-  content: "";
-}
-@media (min-width: 1200px) {
-  .header__container {
-    max-width: 1170px;
-    padding: 0;
-  }
-}
-
-.header__logo {
-  float: left;
-  max-width: 240px;
-  width: 100%;
-}
-
-.header__nav {
-  margin-top: 8px;
-  margin-bottom: 0;
-}
-
-.fd-column {
-  flex-direction: column;
-}
-
-.header__nav-right-cta-wrapper {
-  ul {
-    margin: 0 0 2px 25px;
-  }
-
-  a.login-easel {
-    padding: 0 18px;
-    font-size: 11px;
-    border-radius: 2px;
-    float: right;
-    border: 2px solid #ffb762;
-    color: #333;
-    background-color: #ffb762;
-  }
-}
-
-.header__nav--left {
-  float: left;
-  margin-left: 30px;
-}
-@media (min-width: 1200px) {
-  .header__nav--left {
-    margin-left: 70px;
-  }
-}
-
-.header__nav--right {
-  display: flex;
-  float: right;
-  margin-top: 8px;
-  list-style: none;
-}
-
-.header__nav-item {
-  display: inline-block;
-  height: 25px;
-  list-style-type: none;
-  margin-right: 16px;
-  padding-top: 5px;
-  padding-right: 16px;
-  text-transform: uppercase;
-}
-
-.header__navItem {
-  display: inline-block;
-  height: 25px;
-  list-style-type: none;
-  margin-right: 15px;
-  padding-top: 5px;
-  padding-right: 15px;
-  border-right: 1px solid #CECECE;
-  text-transform: uppercase;
-}
-.header__navItem:last-child {
-  margin-right: 0;
-  padding-right: 0;
-  border-right: none;
-}
-@media (min-width: 1200px) {
-  .header__navItem {
-    margin-right: 20px;
-    padding-right: 20px;
-  }
-}
-
-.header__link {
-  color: #383838;
-  display: block;
-  float: inherit;
-}
-
-.header__link:hover, .header__link:focus {
-  color: #d57800 !important;
-  text-decoration: none;
-}
-
-.header__link:visited {
-  color: #383838;
-}
-
-@media (min-width: 960px) {
-  .header__link {
-    display: inline;
-  }
-}
-
-.header__avatar {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  margin-bottom: 13px;
-}
-
-.header__cart:hover, .header__cart:focus {
-  text-decoration: none;
-}
-
-.header__itemBadge {
-  display: inline-block;
-  background: #FFA400;
-  padding: 0 2px;
-  min-width: 20px;
-  height: 20px;
-  font-size: 14px;
-  border-radius: 20px;
-  line-height: 22px;
-  position: relative;
-  text-align: center;
-  top: -16px;
-  left: -10px;
-  color: #fff;
-  margin-right: -15px;
-}
-
-.nav-icon {
-  width: 22px;
-  height: 22px;
-}
-.nav-icon path, .nav-icon circle {
-  fill: #666666;
-}
-.nav-icon:hover path, .nav-icon:hover circle {
-  fill: #7D55C7;
-}
-
-#header.header--inverted {
-  border-bottom: 0;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-@media (min-width: 960px) {
-  .mobileHeader {
-    display: none;
-  }
-
-  .header {
-    display: block;
-  }
-}
-@media print {
-  .mobileHeader {
-    display: none;
-  }
-}
-
-.mobileHeader__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  border-bottom: 1px solid #CECECE;
-}
-
-.mobileHeader__icon {
-  font-size: 24px;
-  width: 20px;
-  color: #383838;
-}
-
-.mobileHeader__logo {
-  max-width: 180px;
-  width: 100%;
-
-  img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
-    border: 0;
-  }
-}
-@media (min-width: 500px) {
-  .mobileHeader__logo {
-    max-width: 250px;
-  }
-}
-
-.mobileHeader__dropdown {
-  display: none;
-  background: #eee;
-  padding: 30px 15px;
-}
-
-.mobileHeader__links {
-  background: #fff;
-  margin: 0;
-  list-style-type: none;
-  box-shadow: 0px 2px 6px #CECECE;
-  text-transform: uppercase;
-}
-
-.mobileHeader__shop {
-  display: flex;
-  justify-content: space-between;
-}
-.mobileHeader__shop:hover, .mobileHeader__shop:focus {
-  color: #383838;
-}
-
-.mobileHeader__links--downcase {
-  display: none;
-  text-transform: none;
-  list-style-type: none;
-  margin: 0;
-}
-
-.mobileHeader__dropdownItem {
-  padding: 10px 0;
-}
-
-.mobileHeader__navItem {
-  padding: 20px;
-  border-bottom: 1px solid #CECECE;
+#main-outlet-wrapper .row > * {
+  padding: 0 !important;
 }
 
 .cookie-banner {
