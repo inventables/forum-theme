@@ -15,16 +15,16 @@
           </ul>
         </li>
         <li class="header__navItem">
-          <a href="https://www.inventables.com/technologies/easel" class="header__link">Easel</a>
+          <a href="https://easel.com" class="header__link">Easel</a>
         </li>
         <li class="header__navItem">
-          <a href="https://www.inventables.com/projects" class="header__link">Projects</a>
+          <a href="https://site.inventables.com/projects" class="header__link">Projects</a>
         </li>
         <li class="header__navItem">
-          <a href="https://discuss.inventables.com/" class="header__link">Forum</a>
+          <a href="https://forum.easel.com/" class="header__link">Forum</a>
         </li>
         <li class="header__navItem">
-          <a href="https://www.inventables.com/support" class="header__link">Support</a>
+          <a href="https://support.easel.com/hc/en-us" class="header__link">Support</a>
         </li>
       </ul>
     </nav>
@@ -66,81 +66,26 @@
         </li>
       </ul>
       <li class="mobileHeader__navItem">
-        <a href="https://www.inventables.com/technologies/easel" class="header__link">Easel</a>
+        <a href="https://easel.com" class="header__link">Easel</a>
       </li>
       <li class="mobileHeader__navItem">
-        <a href="https://www.inventables.com/projects" class="header__link">Projects</a>
+        <a href="https://site.inventables.com/projects" class="header__link">Projects</a>
       </li>
       <li class="mobileHeader__navItem">
-        <a href="https://www.inventables.com/forum" class="header__link">Forum</a>
+        <a href="https://forum.easel.com/" class="header__link">Forum</a>
       </li>
       <li class="mobileHeader__navItem">
-        <a href="https://www.inventables.com/support" class="header__link">Support</a>
+        <a href="https://support.easel.com/hc/en-us" class="header__link">Support</a>
       </li>
       <div id="mobile-header-content">
         <li class="mobileHeader__navItem">
-          <a href="https://www.inventables.com/account" class="header__link">My Account</a>
-        </li>
-        <li class="mobileHeader__navItem">
-          <a href="https://www.inventables.com/logout" class="header__link">Log Out</a>
+          <a href="https://easel/com.logout" class="header__link">Log Out</a>
         </li>
       </div>
     </ul>
   </div>
 </div>
 
-<script>
-    $(function() {
-        $("#current-user a div").replaceWith("<i class='fa fa-comment d-icon'></i>");
-        $.ajax({
-            method: "GET",
-            url: "https://www.inventables.com/nav_bar",
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(function(data) {
-            var $data = $($.parseHTML(data)),
-                headerNav = $data.find('#main-nav-bar').children().first(),
-                mobileHeaderContent = $data.find('#mobile-header-content'),
-                mobileCartContent = $data.find('#mobile-cart-content')
-            // 2022-04-01: Fixed easel login link
-            $data.find("a").each(function() {
-              if(!this.classList.contains('login-easel')){
-                $(this).attr("href", "https://www.inventables.com" + $(this).attr('href'));
-              }
-            });
-
-            $(".header__nav").after(headerNav);
-            $(".mobileHeader__container").append(mobileCartContent);
-            $(".mobileHeader__links").append(mobileHeaderContent);
-
-            if (Discourse.User._current) {
-                var preferencesUrl = "/users/" + Discourse.User._current.username + "/preferences";
-                if ($("#logout-divider").length > 0) {
-                    $("#logout-divider").before("<li><a href='" + preferencesUrl + "'>Forum Preferences</a></li>");
-                } else {
-                  window.location = "/session/sso?return_path=" + encodeURIComponent(window.location.pathname);
-                }
-            }
-            
-            // 2020-12-22: Fixed nav dropdown toggles
-            //  TODO: Fix mobile hamburger menu is not appearing
-            //  TODO: Refactor this to avoid duplication
-            $('[data-toggle=dropdown]').click(function(event) {
-                event.preventDefault();
-                var thisDropdownMenu = $(this).parent().find('.dropdown-menu');
-
-                if (thisDropdownMenu.css('display') === 'none') {
-                    $('.dropdown-menu').hide();
-                    thisDropdownMenu.show();
-                } else {
-                    thisDropdownMenu.hide();
-                }
-            });
-        });
-        
-    });
-</script>
 <section class="cookie-banner" style="display: none;">
   <p class="cookie-banner-title"><strong>This website uses cookies</strong></p>
   <p>We use cookies to personalize content, interact with our analytics companies, advertising networks and cooperatives, and demographic companies, provide social media features, and to analyze our traffic. Our social media, advertising and analytics partners may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services. <a href='https://www.inventables.com/policies/privacy-policy' target='_blank'>Learn more.</a></p>
