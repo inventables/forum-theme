@@ -1,35 +1,146 @@
 <div class="header" id="header">
-  <nav class="navbar navbar-expand-lg p-4">
-    <div class="container-fluid">
-      <a href="https://easel.com/" class="navbar-brand" aria-current="page" aria-label="home">
-        <img src="https://discuss-assets.s3.us-east-1.amazonaws.com/easel-logo.png" alt="Easel logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a href="https://easel.com/#Easel-Pro" class="nav-link">Easel Pro</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://easel.com/#Cabinetmaker" class="nav-link">Cabinetmaker</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://site.inventables.com/projects/" class="nav-link">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://forum.easel.com/" class="nav-link">Forum</a>
-          </li>
-        </ul>
-        <div class="d-flex">
-          <a href="https://easel.com/users/sign_in" class="btn btn-outline-light rounded-pill px-4">Log In</a>
-        </div>
+  <div class="header__container">
+    <nav class="header__navigation">
+      <a href="https://shop.inventables.com/" class="header__logo"><img alt="Rebranding-inventables-logo" src="https://discuss-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/0/e0ca8a3892eb4f867260ec6aea402b009513f5c1.svg"></a>
+      <ul class="header__nav header__nav--left">
+        <li class="header__navItem dropdown">
+          <a href="#" class="header__link dropdown-toggle" data-toggle="dropdown">Shop</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.inventables.com/technologies/x-carve-pro">X-Carve Pro</a></li>
+            <li><a href="https://www.inventables.com/products/x-carve-1">X-Carve</a></li>
+            <li><a href="https://www.inventables.com/categories/carving-bits">Carving Bits</a></li>
+            <li><a href="https://www.inventables.com/categories/materials">Materials</a></li>
+            <li><a href="https://www.inventables.com/categories/machine-components">Machine Components</a></li>
+            <li><a href="https://www.inventables.com/categories">Shop All Categories</a></li>
+          </ul>
+        </li>
+        <li class="header__navItem">
+          <a href="https://www.inventables.com/technologies/easel" class="header__link">Easel</a>
+        </li>
+        <li class="header__navItem">
+          <a href="https://www.inventables.com/projects" class="header__link">Projects</a>
+        </li>
+        <li class="header__navItem">
+          <a href="https://discuss.inventables.com/" class="header__link">Forum</a>
+        </li>
+        <li class="header__navItem">
+          <a href="https://www.inventables.com/support" class="header__link">Support</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="mobileHeader">
+  <div class="mobileHeader__container">
+    <a href="#" id="js--mobileIcon"><i class="mobileHeader__icon fa fa-bars"></i></a>
+
+    <a href="https://www.inventables.com/" class="mobileHeader__logo"><img alt="Rebranding-inventables-logo" src="https://discuss-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/0/e0ca8a3892eb4f867260ec6aea402b009513f5c1.svg"></a>
+  </div>
+
+  <div id="js--mobileDropdown" class="mobileHeader__dropdown">
+    <ul class="mobileHeader__links">
+      <li class="mobileHeader__navItem">
+        <a href="#" class="header__link mobileHeader__shop" id="js--dropdownItem">
+          Shop
+          <i class="fa fa-chevron-down fa--dropdown"></i>
+        </a>
+      </li>
+      <ul id="js--dropdownList" class="mobileHeader__navItem mobileHeader__links--downcase">
+        <li class="mobileHeader__dropdownItem">
+          <a href="https://www.inventables.com/technologies/x-carve-pro" class="header__link">X-Carve Pro</a>
+        </li>
+        <li class="mobileHeader__dropdownItem">
+          <a href="https://www.inventables.com/xcarve" class="header__link">X-Carve</a>
+        </li>
+        <li class="mobileHeader__dropdownItem">
+          <a href="https://www.inventables.com/categories/carving-bits" class="header__link">Carving Bits</a>
+        </li>
+        <li class="mobileHeader__dropdownItem">
+          <a href="https://www.inventables.com/categories/materials" class="header__link">Materials</a>
+        </li>
+        <li class="mobileHeader__dropdownItem">
+          <a href="https://www.inventables.com/categories/machine-components" class="header__link">Machine Components</a>
+        </li>
+        <li class="mobileHeader__dropdownItem">
+          <a href="https://www.inventables.com/categories" class="header__link">Shop All Categories</a>
+        </li>
+      </ul>
+      <li class="mobileHeader__navItem">
+        <a href="https://www.inventables.com/technologies/easel" class="header__link">Easel</a>
+      </li>
+      <li class="mobileHeader__navItem">
+        <a href="https://www.inventables.com/projects" class="header__link">Projects</a>
+      </li>
+      <li class="mobileHeader__navItem">
+        <a href="https://www.inventables.com/forum" class="header__link">Forum</a>
+      </li>
+      <li class="mobileHeader__navItem">
+        <a href="https://www.inventables.com/support" class="header__link">Support</a>
+      </li>
+      <div id="mobile-header-content">
+        <li class="mobileHeader__navItem">
+          <a href="https://www.inventables.com/account" class="header__link">My Account</a>
+        </li>
+        <li class="mobileHeader__navItem">
+          <a href="https://www.inventables.com/logout" class="header__link">Log Out</a>
+        </li>
       </div>
-    </div>
-  </nav>
+    </ul>
+  </div>
 </div>
 
+<script>
+    $(function() {
+        $("#current-user a div").replaceWith("<i class='fa fa-comment d-icon'></i>");
+        $.ajax({
+            method: "GET",
+            url: "https://www.inventables.com/nav_bar",
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function(data) {
+            var $data = $($.parseHTML(data)),
+                headerNav = $data.find('#main-nav-bar').children().first(),
+                mobileHeaderContent = $data.find('#mobile-header-content'),
+                mobileCartContent = $data.find('#mobile-cart-content')
+            // 2022-04-01: Fixed easel login link
+            $data.find("a").each(function() {
+              if(!this.classList.contains('login-easel')){
+                $(this).attr("href", "https://www.inventables.com" + $(this).attr('href'));
+              }
+            });
+
+            $(".header__nav").after(headerNav);
+            $(".mobileHeader__container").append(mobileCartContent);
+            $(".mobileHeader__links").append(mobileHeaderContent);
+
+            if (Discourse.User._current) {
+                var preferencesUrl = "/users/" + Discourse.User._current.username + "/preferences";
+                if ($("#logout-divider").length > 0) {
+                    $("#logout-divider").before("<li><a href='" + preferencesUrl + "'>Forum Preferences</a></li>");
+                } else {
+                  window.location = "/session/sso?return_path=" + encodeURIComponent(window.location.pathname);
+                }
+            }
+            
+            // 2020-12-22: Fixed nav dropdown toggles
+            //  TODO: Fix mobile hamburger menu is not appearing
+            //  TODO: Refactor this to avoid duplication
+            $('[data-toggle=dropdown]').click(function(event) {
+                event.preventDefault();
+                var thisDropdownMenu = $(this).parent().find('.dropdown-menu');
+
+                if (thisDropdownMenu.css('display') === 'none') {
+                    $('.dropdown-menu').hide();
+                    thisDropdownMenu.show();
+                } else {
+                    thisDropdownMenu.hide();
+                }
+            });
+        });
+        
+    });
+</script>
 <section class="cookie-banner" style="display: none;">
   <p class="cookie-banner-title"><strong>This website uses cookies</strong></p>
   <p>We use cookies to personalize content, interact with our analytics companies, advertising networks and cooperatives, and demographic companies, provide social media features, and to analyze our traffic. Our social media, advertising and analytics partners may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services. <a href='https://www.inventables.com/policies/privacy-policy' target='_blank'>Learn more.</a></p>
