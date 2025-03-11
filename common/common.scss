@@ -141,8 +141,7 @@ html, body {
 }
 
 /* Button styles */
-.btn {
-  display: inline-block;
+.btn-outline-light {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -157,10 +156,6 @@ html, body {
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.btn-outline-light {
-  color: black;
   border-color: #ffffff;
   background-color: #f8f9fa;
   
