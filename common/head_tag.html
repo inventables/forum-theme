@@ -1,14 +1,38 @@
-<link rel=icon href="https://www.inventables.com/favicon_v1.png">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css' data-noprefix>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel=icon href="https://easel.com/favicon.ico">
+
+<!-- Bootstrap navbar collapse functionality - minimal version -->
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all navbar toggler buttons
+  const togglers = document.querySelectorAll('.navbar-toggler');
+  
+  togglers.forEach(toggler => {
+    toggler.addEventListener('click', function() {
+      // Get the target from the data-bs-target attribute
+      const targetId = this.getAttribute('data-bs-target');
+      const target = document.querySelector(targetId);
+      
+      // Toggle the show class
+      if (target) {
+        if (target.classList.contains('show')) {
+          target.classList.remove('show');
+          this.setAttribute('aria-expanded', 'false');
+        } else {
+          target.classList.add('show');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      }
+    });
+  });
+});
+</script>
+
 <script type="text/discourse-plugin" version="0.1">
   api.onPageChange((url) => {
     const cookieBanner = document.querySelector('.cookie-banner');
     const cookieBannerOk = document.querySelector('.cookie-banner__btn--ok');
     const setReadCookiePolicy = () => {
-      document.cookie = `_inv_read_cookie_policy_at=${(new Date).getTime()}; domain=inventables.com; path=/; max-age=31536000`;
+      document.cookie = `_inv_read_cookie_policy_at=${(new Date).getTime()}; domain=easel.com; path=/; max-age=31536000`;
     };
     const didReadCookiePolicy = () => {
       return document.cookie.split(';').some(crumb => crumb.trim().startsWith('_inv_read_cookie_policy_at='));
