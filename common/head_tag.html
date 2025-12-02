@@ -5,13 +5,13 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Get all navbar toggler buttons
   const togglers = document.querySelectorAll('.navbar-toggler');
-  
+
   togglers.forEach(toggler => {
     toggler.addEventListener('click', function() {
       // Get the target from the data-bs-target attribute
       const targetId = this.getAttribute('data-bs-target');
       const target = document.querySelector(targetId);
-      
+
       // Toggle the show class
       if (target) {
         if (target.classList.contains('show')) {
@@ -25,27 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-</script>
-
-<script type="text/discourse-plugin" version="0.1">
-  api.onPageChange((url) => {
-    const cookieBanner = document.querySelector('.cookie-banner');
-    const cookieBannerOk = document.querySelector('.cookie-banner__btn--ok');
-    const setReadCookiePolicy = () => {
-      document.cookie = `_inv_read_cookie_policy_at=${(new Date).getTime()}; domain=easel.com; path=/; max-age=31536000`;
-    };
-    const didReadCookiePolicy = () => {
-      return document.cookie.split(';').some(crumb => crumb.trim().startsWith('_inv_read_cookie_policy_at='));
-    };
-    cookieBannerOk.addEventListener('click', () => {
-      cookieBanner.style.display = 'none';
-    });
-    if (!didReadCookiePolicy()) {
-      setReadCookiePolicy();
-      cookieBanner.style.display = 'block';
-    }
-    else {
-      cookieBanner.style.display = 'none';
-    }
-  });
 </script>
